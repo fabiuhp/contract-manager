@@ -2,6 +2,7 @@ package br.com.alura.contractmanager;
 
 import br.com.alura.contractmanager.entities.*;
 import br.com.alura.contractmanager.repositories.ContratoRepository;
+import br.com.alura.contractmanager.services.EmailService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,9 +16,11 @@ import java.util.List;
 public class ContratoController {
 
     private final ContratoRepository contratoRepository;
+    private final EmailService emailService;
 
-    public ContratoController(ContratoRepository contratoRepository) {
+    public ContratoController(ContratoRepository contratoRepository, EmailService emailService) {
         this.contratoRepository = contratoRepository;
+        this.emailService = emailService;
     }
 
     @GetMapping("/contratos")
@@ -43,6 +46,8 @@ public class ContratoController {
         } else {
             newContrato.setStatus(Status.ATIVO);
         }
+
+        emailService.enviarEmail(contratoForm.nomeContratante(), contratoForm.email());
 
         contratoRepository.save(newContrato);
         return "redirect:/contratos/";

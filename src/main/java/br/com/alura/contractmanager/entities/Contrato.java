@@ -14,17 +14,21 @@ public class Contrato {
     @GeneratedValue
     private Long id;
 
+    private String email;
     private Long numeroContrato;
     private String nomeContratante;
     private String responsavel;
+    private String telefoneResponsavel;
     private LocalDate dataVencimento;
     private Status status;
     private BigDecimal valorContrato;
 
-    public Contrato(Long numeroContrato, String nomeContratante, String responsavel, LocalDate dataVencimento, BigDecimal valorContrato) {
+    public Contrato(String email, Long numeroContrato, String nomeContratante, String responsavel, String telefoneResponsavel, LocalDate dataVencimento, BigDecimal valorContrato) {
+        this.email = email;
         this.numeroContrato = numeroContrato;
         this.nomeContratante = nomeContratante;
         this.responsavel = responsavel;
+        this.telefoneResponsavel = telefoneResponsavel;
         this.dataVencimento = dataVencimento;
         this.valorContrato = valorContrato;
     }

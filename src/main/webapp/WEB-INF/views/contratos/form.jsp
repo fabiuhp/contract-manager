@@ -25,6 +25,12 @@
         <form:errors path="nomeContratante"/>
     </div>
     <div class="form-group mb-3">
+        <label for="email">Email Contratante</label>
+        <form:input type="text" class="form-control" path="email" id="email" placeholder="Email Contratante"
+                    maxlength="100"/>
+        <form:errors path="email"/>
+    </div>
+    <div class="form-group mb-3">
         <label for="numeroContrato">Numero do Contrato</label>
         <form:input type="number" class="form-control" path="numeroContrato" id="numeroContrato" placeholder="Numero do contrato"/>
         <form:errors path="numeroContrato"/>
