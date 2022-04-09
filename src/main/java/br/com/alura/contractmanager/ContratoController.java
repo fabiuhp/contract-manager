@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -36,6 +37,13 @@ public class ContratoController {
     @PostMapping("/contratos")
     public String createPlace(@Valid ContratoForm contratoForm) {
         Contrato newContrato = contratoForm.toModel();
+
+        if (newContrato.getDataVencimento().isBefore(LocalDate.now())) {
+            newContrato.setStatus(Status.VENCIDO);
+        } else {
+            newContrato.setStatus(Status.ATIVO);
+        }
+
         contratoRepository.save(newContrato);
         return "redirect:/contratos/";
     }
