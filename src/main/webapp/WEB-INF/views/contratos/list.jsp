@@ -15,37 +15,40 @@
 </head>
 
 <body>
-<div class="container">
-    <h1>Formulário de contratos</h1>
+    <div class="container">
+        <h1>Formulário de contratos</h1>
 
-    <table>
-        <thead>
-            <th>Id</th>
-            <th>Nome Contratante</th>
-            <th>Numero do Contrato</th>
-            <th>Responsável</th>
-            <th>Data do Vencimento</th>
-            <th>Status</th>
-            <th>Valor do Contrato</th>
-        </thead>
-        <tbody>
-        <c:forEach items="${contratos}" var="contrato">
+        <table class="table">
+            <thead>
             <tr>
-                <td>${contrato.id}</td>
-                <td>${contrato.nomeContratante}</td>
-                <td>${contrato.numeroContrato}</td>
-                <td>${contrato.responsavel}</td>
-                <td>${contrato.dataVencimento}</td>
-                <td>${contrato.status}</td>
-                <td>${contrato.valorContrato}</td>
+                <th scope="col">Id</th>
+                <th scope="col">Nome Contratante</th>
+                <th scope="col">Numero do Contrato</th>
+                <th scope="col">Responsável</th>
+                <th scope="col">Data do Vencimento</th>
+                <th scope="col">Status</th>
+                <th scope="col">Valor do Contrato</th>
             </tr>
-        </c:forEach>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            <c:forEach items="${contratos}" var="contrato">
+                <tr>
+                    <td>${contrato.id}</td>
+                    <td>${contrato.nomeContratante}</td>
+                    <td>${contrato.numeroContrato}</td>
+                    <td>${contrato.responsavel}</td>
+                    <td>${contrato.dataVencimento}</td>
+                    <td>${contrato.status}</td>
+                    <td>${contrato.valorContrato}</td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                crossorigin="anonymous"></script>
+    </div>
 </body>
 
 </html>

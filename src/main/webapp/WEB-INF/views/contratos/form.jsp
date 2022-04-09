@@ -18,34 +18,35 @@
     <h1>Formulário de contratos</h1>
 
     <form:form method="POST" action="/contratos" modelAttribute="contratoForm">
-    <label for="nomeContratante">Nome Contratante</label>
-        <form:input type="text" path="nomeContratante" id="nomeContratante" placeholder="Nome Contratante"
+    <div class="form-group mb-3">
+        <label for="nomeContratante">Nome Contratante</label>
+        <form:input type="text" class="form-control" path="nomeContratante" id="nomeContratante" placeholder="Nome Contratante"
                     maxlength="100"/>
         <form:errors path="nomeContratante"/>
-    <br/>
-    <br/>
-    <label for="numeroContrato">Numero do Contrato</label>
-        <form:input type="number" path="numeroContrato" id="numeroContrato" placeholder="Numero do contrato"/>
+    </div>
+    <div class="form-group mb-3">
+        <label for="numeroContrato">Numero do Contrato</label>
+        <form:input type="number" class="form-control" path="numeroContrato" id="numeroContrato" placeholder="Numero do contrato"/>
         <form:errors path="numeroContrato"/>
-    <br/>
-    <br/>
-    <label for="responsavel">Responsável</label>
-        <form:input type="text" path="responsavel" id="responsavel" placeholder="Responsável" maxlength="100"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="responsavel">Responsável</label>
+        <form:input type="text" class="form-control" path="responsavel" id="responsavel" placeholder="Responsável" maxlength="100"/>
         <form:errors path="responsavel"/>
-    <br/>
-    <br/>
-    <label for="dataVencimento">Data do Vencimento</label>
-        <form:input type="date" path="dataVencimento" id="dataVencimento" placeholder="Data de nascimento"
+    </div>
+    <div class="form-group mb-3">
+        <label for="dataVencimento">Data do Vencimento</label>
+        <form:input type="date" path="dataVencimento" class="form-control" id="dataVencimento" placeholder="Data de nascimento"
                     maxlength="100"/>
         <form:errors path="dataVencimento"/>
-    <br/>
-    <br/>
-    <label for="valorContrato">Valor do Contrato</label>
-        <form:input type="number" path="valorContrato" id="valorContrato" placeholder="Valor do Contrato"
+    </div>
+    <div class="form-group mb-3">
+        <label for="valorContrato">Valor do Contrato</label>
+        <form:input type="number" path="valorContrato" class="form-control" id="valorContrato" placeholder="Valor do Contrato"
                     maxlength="100"/>
         <form:errors path="valorContrato"/>
-    <br/>
-    <br/>
+    </div>
 
     <input type="submit" value="Cadastrar contrato"/>
     </form:form>
